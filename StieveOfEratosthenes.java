@@ -24,9 +24,14 @@ public class StieveOfEratosthenes {
     }
     }
     public static void printPrimes(boolean[] bool){
+        int count=0;
         for(int i=2;i<bool.length;i++){
-            if(!bool[i])
-            System.out.print(i+" ");
+            if(!bool[i]){
+                System.out.print(i+" ");
+                count++;
+            }
         }
+        System.out.println();
+        System.out.println(count);
     }
 }
