@@ -1,7 +1,6 @@
 public class StarPattern{
     public static void main(String[] args){
-        pattern18(5);
-
+        pattern21(5);
     }
     static void pattern11(int n){
         for(int row=0;row<2*n;row++){
@@ -124,5 +123,49 @@ public class StarPattern{
             }
             System.out.println();
         }
+    }
+    static void pattern19(int n){
+      for(int row=0;row<n;row++){
+        for(int col=0;col<n;col++){
+          if(row==(n-1)){
+            System.out.print("*");
+          }else if(col==(n-1)||col==(n-row-1)){
+            System.out.print("*");
+          }else{
+            System.out.print(" ");
+          }
+        }
+        System.out.println();
+      }
+    }
+    static void pattern20(int n){
+      for(int row=0;row<n;row++){
+        for(int col=0;col<n;col++){
+          if(row==0){
+            System.out.print("*");
+          }
+          else if(col==(n-1)||col==(row)){
+            System.out.print("*");
+          }
+          else{
+            System.out.print(" ");
+          }
+        }
+        System.out.println();
+      }
+    }
+    static void pattern21(int n){
+      for(int row=0;row<2*n;row++){
+        for(int col=0;col<n;col++){
+          int Tcol = row>n?2*n-row:row;
+          if(col==0 || col==Tcol){
+            System.out.print("*");
+          }
+          else{
+            System.out.print(" ");
+          }
+        }
+        System.out.println();
+      }
     }
 }

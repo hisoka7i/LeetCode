@@ -1,4 +1,4 @@
-class 459 {
+class a459 {
     public boolean repeatedSubstringPattern(String s) {
         char first = s.charAt(0);
         int nextIndex = 0;
