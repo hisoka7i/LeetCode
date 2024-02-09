@@ -7,37 +7,33 @@ public class a49 {
         String cat = "cat";
         String[] sample = {"eat","tea","tan","ate","nat","bat"};
         sampleList = Arrays.asList(sample);
-        System.out.println(sampleList);
-        List<String> example = new ArrayList<>();
-        Iterator<String> itr = sampleList.iterator();
-        while(itr.hasNext()){
-            String str = itr.next();
-            combineTwo(str.toCharArray(), str.length(), example);
-            output.add(example);
-            example.removeAll(example);
+        Map<String,List<Integer>> filledMap = fillMap(sampleList);
+        
+        List<List<String>> output = new ArrayList<>();
+        for(Map.Entry<String,List<Integer>> map: filledMap.entrySet()){
+            List<Integer> positions = map.getValue();
+            List<String> groupanagrams = new ArrayList<>();
+            for(Integer i: positions){
+                groupanagrams.add(sampleList.get(i));
+            }
+            output.add(groupanagrams);
         }
         System.out.println(output);
     }
-    public static void combineTwo(char[] str,int n, List<String> example){
-        if(n==1){
-            String xx = str.toString();
-            for(String cc: sampleList){
-                if(cc.equals(xx)){
-                    System.out.println("This is working");
-                    example.add(xx);
-                }
+    public static Map<String,List<Integer>> fillMap(List<String> sample){
+        Map<String,List<Integer>> map = new HashMap<>();
+        for(int i=0;i<sample.size();i++){
+            char[] ch = sample.get(i).toCharArray();
+            Arrays.sort(ch);
+            String currentSortedString = String.valueOf(ch);
+            if(!map.containsKey(currentSortedString)){
+                List<Integer> pos = new ArrayList<>();
+                map.put(currentSortedString, pos);
             }
-            return;
+            List<Integer> pos = map.get(currentSortedString);
+            pos.add(i);
+            map.put(currentSortedString, pos);
         }
-        for(int i=0;i<n;i++){
-            swap(str, i, n-1);
-            combineTwo(str, n-1,example);
-            swap(str, i, n-1);
-        }
-    }
-    public static void swap(char[] str,int i,int j){
-        char temp = str[i];
-        str[i]=str[j];
-        str[j]=temp;
+        return map;
     }
 }
