@@ -5,6 +5,7 @@ public class a875 {
         int[] sample = {3,6,7,11};
         System.out.println(minEatingSpeed(sample, 8));
     }
+    //This is basic implementation of lower bound code
     public static int minEatingSpeed(int[] piles, int h) {
         Arrays.sort(piles);
         int low = 0, high = piles[piles.length-1];
