@@ -18,6 +18,7 @@ class AgressiveCows{
         }        
         return false;
     }
+    //This is brute force approach
     public static int aggressCow(int[] stalls, int k){
         int n = stalls.length;
         Arrays.sort(stalls);
@@ -29,5 +30,22 @@ class AgressiveCows{
             }
         }
         return limit;
+    }
+    //This is binary search approach
+    public static int binaryAggressCow(int[] stalls, int k){
+        int n = stalls.length;
+        Arrays.sort(stalls);
+
+        int low = 1, high = stalls[n-1] - stalls[0];
+
+        while(low<=high){
+            int mid = low + (high-low)/2;
+            if(canWePlace(stalls,mid,k)==true){
+                low = mid + 1;
+            }else{
+                high = mid - 1;
+            }
+        }
+        return mid;
     }
 }
