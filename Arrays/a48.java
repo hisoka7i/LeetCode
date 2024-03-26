@@ -1,4 +1,3 @@
-package EasyArrayRecursion;
 
 public class a48 {
     class Solution {

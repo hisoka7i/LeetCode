@@ -1,5 +1,4 @@
 import java.util.Arrays;
-
 public class a594 {
     public static void main(String[] args) {
         int a[] = {1,2,4,3,1,35};
