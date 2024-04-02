@@ -16,6 +16,8 @@ public class MinMaxGasStation {
         }
         return cnt;
     }
+
+    
     public static double minimiseMaxDistance(int[] arr, int k) {
         int n = arr.length;
         double low = 0;
