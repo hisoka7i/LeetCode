@@ -1,5 +1,3 @@
-package EasyArrayRecursion;
-
 public class PatternQues {
     public static void main(String[] args){
         triangle(5, 0);

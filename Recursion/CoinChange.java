@@ -1,4 +1,3 @@
-package EasyArrayRecursion;
 import java.util.*;
 class CoinChange {
 
