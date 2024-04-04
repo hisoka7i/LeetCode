@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class AgressiveCows{
     public static void main(String[] args) {
         
@@ -46,6 +48,6 @@ class AgressiveCows{
                 high = mid - 1;
             }
         }
-        return mid;
+        return low;
     }
 }
