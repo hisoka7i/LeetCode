@@ -1,6 +1,7 @@
+package StarPattern;
 public class StarPattern{
     public static void main(String[] args){
-        pattern21(5);
+        pattern12(5);
     }
     static void pattern11(int n){
         for(int row=0;row<2*n;row++){
