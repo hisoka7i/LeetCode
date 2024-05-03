@@ -1,4 +1,6 @@
-// import java.util.*; This was a brute force
+package String;
+// import java.util.*; 
+// This was a brute force
 // public class a131 {
 // 	static List<List<String>> res = new ArrayList<>();
 //
@@ -47,6 +49,8 @@
 //
 // }
 
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
   List<List<String>> result = new ArrayList<>();
