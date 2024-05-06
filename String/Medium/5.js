@@ -1,4 +1,4 @@
-
+console.log(longestPalindrome("aba"))
 function longestPalindrome(s){
     let startIndex = 0;
     let maxLength = 1; //because it should be atleast 1
