@@ -14,7 +14,7 @@ public class a142 {
             fast = fast.next.next;
             if(slow == fast){
                 slow = head;
-                while(slow != head){
+                while(slow != fast){
                     slow = slow.next;
                     fast = fast.next;
                 }
