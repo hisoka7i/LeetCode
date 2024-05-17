@@ -6,6 +6,37 @@ public class a61 {
     public static void main(String[] args) {
         
     }
+
+    public static ListNode rotateRight2(ListNode head, int k){
+        if(head==null)
+            return head;
+        
+        int size = 1;
+        ListNode current = head;
+
+        //getting the length
+        while(current.next!=null){
+            current = current.next;
+            ++size;
+        }
+
+        current.next = head;
+        //making list circular
+
+        int i = size - (k%size);
+
+        while (i>1) {
+            head = head.next;
+            i--;
+        }
+        //moving the head
+
+        current = head.next;
+        head.next = null;
+
+        return current;
+    }
+    
     public static ListNode rotateRight(ListNode head, int k) {
         ListNode slow = null;
         ListNode fast = null;

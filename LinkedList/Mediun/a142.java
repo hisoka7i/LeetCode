@@ -32,12 +32,7 @@ public class a142 {
             if(temp==head){
                 return true;
             }
-        }while(temp!=null){
-            if(temp==head){
-                return true;
-            }
-            temp = temp.next;
-        }
+        }while(temp!=null);
         return checkIfExist(head.next);
     }
 }
