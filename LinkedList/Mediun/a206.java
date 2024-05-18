@@ -3,6 +3,7 @@ package LinkedList.Mediun;
 import LinkedList.SinglyLinkedList.ListNode;
 
 public class a206 {
+    
     public ListNode reverseList(ListNode head) {
         ListNode prev=null;
         ListNode current=head;
