@@ -60,7 +60,7 @@ public class a25 {
         // Return the Kth node
         return temp;
     }
-    public static void reverseList(ListNode head){
+    public static ListNode reverseList(ListNode head){
         ListNode prev = null;
         ListNode current = head;
         while (current!=null) {
