@@ -1,0 +1,11 @@
+List of topics that I need to master
+a. Arrays and Hashing
+b. Two pointers
+c. Sliding window
+d. Binary Search
+e. Linked List
+f. Trees 
+g. Heap / Priority Queue
+h. Graphs
+
+//Solve NeetCode 150
