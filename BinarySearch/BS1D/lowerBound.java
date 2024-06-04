@@ -39,7 +39,8 @@ public class lowerBound {
         while(left<right){
             
             int mid  = (left+right)/2;
-            if(arr[mid]>=target){ans = mid;
+            if(arr[mid]>=target){
+            ans = mid;
             right=mid-1;}
             else{
                 left = mid+1;
