@@ -4,7 +4,8 @@ import java.util.Stack;
 
 public class a907 {
     public static void main(String[] args) {
-        
+        int[] sample = {1,2,3};
+        System.out.println(sumSubarrayMins(sample));
     }
     public static int sumSubarrayMins(int[] arr) {
         int n = arr.length;
