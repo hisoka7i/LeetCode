@@ -26,7 +26,6 @@ public class a2104 {
             }
             s.push(i);
         }
-        int sum = 0;
 
         s.clear();
         //This is for sum of maximums
@@ -34,7 +33,6 @@ public class a2104 {
             while (!s.isEmpty() && A[s.peek()] < (i == n ? Integer.MAX_VALUE : A[i])) {
                 j = s.pop();
                 k = s.isEmpty() ? -1 : s.peek();
-                sum += (long)A[j] * (i - j) * (j - k);
                 res += (long)A[j] * (i - j) * (j - k);
 
             }
