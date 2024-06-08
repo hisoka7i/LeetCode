@@ -1,4 +1,4 @@
-package ArrayQuestions;
+package ArrayQuestions.PracticeQuestions;
 import java.util.*;
 
 import javax.sound.sampled.EnumControl.Type;

@@ -1,4 +1,4 @@
-package ArrayQuestions;
+package ArrayQuestions.Concepts;
 import java.util.HashMap;
 
 public class max0SubArray {

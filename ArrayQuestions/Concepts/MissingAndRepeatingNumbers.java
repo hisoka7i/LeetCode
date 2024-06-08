@@ -1,4 +1,4 @@
-package ArrayQuestions;
+package ArrayQuestions.Concepts;
 public class MissingAndRepeatingNumbers {
     public static void main(String[] args) {
         int[] sample = {1,2,2,3};

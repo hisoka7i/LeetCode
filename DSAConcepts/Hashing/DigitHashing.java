@@ -20,7 +20,7 @@ class DigitHashing{
   public static void usingHashMap(int[] sample){
     Map<Integer,Integer> mpp = new HashMap<>();
     for(int i=0;i<sample.length;i++){
-      int value = mpp.getOrDefault(sample[i], 0); //This searches for key
+            int value = mpp.getOrDefault(sample[i], 0); //This searches for key
             mpp.put(sample[i], value + 1);
     }
     Collection<Integer> lst = null;

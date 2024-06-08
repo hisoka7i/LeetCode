@@ -1,4 +1,4 @@
-package ArrayQuestions;
+package ArrayQuestions.Concepts;
 class MajorityElement{
   public static void main(String[] args){
     int[] arr1 = {1,1,2,3,3,3,3,3,3,4,4,4,2,4};

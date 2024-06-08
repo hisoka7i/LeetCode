@@ -1,4 +1,4 @@
-package ArrayQuestions;
+package ArrayQuestions.Concepts;
 import java.util.*;
 class arrayshift {
     public static void main(String[] args) {
