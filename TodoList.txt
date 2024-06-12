@@ -3,9 +3,9 @@ a. Arrays and Hashing
 b. Two pointers
 c. Sliding window
 d. Binary Search <-- revisit
-e. Linked List
+e. Linked List 
 f. Trees 
-g. Heap / Priority Queue
-h. Graphs
+g. Heap / Priority Queue 
+h. Graphs 
 
 //Solve NeetCode 150
