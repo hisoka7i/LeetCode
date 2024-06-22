@@ -1,4 +1,4 @@
-package SlidingWindowPlusTwoPointer.MediumProblems;
+package MediumProblems;
 
 public class a1004 {
     public static void main(String[] args) {

@@ -5,6 +5,10 @@ public class a930 {
         
     }
     public static int numSubarraysWithSum(int[] nums, int goal) {
+        //we will find all the sums which are less or equal to goal
+        //we will find all the sums which are less or equal to goal - 1
+        //and we will simple subtract them
+        //which in  turn give us, sum which are equal to goal
         return (helper(nums, goal)-helper(nums, goal-1));
     }
     //here we will try to find all the elements or sub arrays 
@@ -20,9 +24,11 @@ public class a930 {
                 //we will increase the left 
                 l++;
             }
+            //this count is the number of sub arrays which are less than 
+            //or equal to goal
             count += (r-l+1);
             r++;
         }
         return count;
-    } 
+    }
 }

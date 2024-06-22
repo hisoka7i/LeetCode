@@ -1,4 +1,4 @@
-package SlidingWindowPlusTwoPointer.MediumProblems;
+package MediumProblems;
 
 import java.util.HashMap;
 import java.util.Map;
