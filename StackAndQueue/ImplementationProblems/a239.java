@@ -1,4 +1,4 @@
-package StackAndQueue;
+package StackAndQueue.ImplementationProblems;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -7,6 +7,7 @@ public class a239 {
     public static void main(String[] args) {
         
     }
+    //dry run this question with pen and paper to understand better 
     public static int[] maxSlidingWindow(int[] nums, int k) {
         //we will be using the comcept of next greatest element
         //we need a deque -- > This is a doubly linked list(allows operations at both sides)
@@ -39,6 +40,9 @@ public class a239 {
                 q.pollLast();
             }
             q.offer(i);
+
+            //this is condition to check if the window is fully formed
+            //we will not be considering the first k - 1 elements
             if (i >= k - 1) {
                 result[right_index++] = nums[q.peek()];
             }
