@@ -23,6 +23,13 @@ public class a1358 {
         for(int i=0;i<s.length();i++){
             last_seen[s.charAt(i) - 'a'] = i;
             int last = findLast(last_seen);
+            /*
+             * The line count = count + 1 + last; is crucial for 
+             * incrementing the total count of substrings containing all three 
+             * characters 'a', 'b', and 'c'. It adds the number of valid 
+             * substrings ending at the current character by considering
+             *  the minimum index up to which all three characters have been seen.
+             */
             count = count + 1 + last;
         }
         return count;
