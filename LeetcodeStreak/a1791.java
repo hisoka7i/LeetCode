@@ -2,7 +2,7 @@ package LeetcodeStreak;
 
 public class a1791 {
     //we are trying to find centre of graph here
-    /*
+    /* 
      * Intution, here we will find, number of connection to a node
      */
     public int findCenter(int[][] edges) {
