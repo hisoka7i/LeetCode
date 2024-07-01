@@ -1,7 +1,7 @@
 List of topics that I need to master
-a. Arrays and Hashing
-b. Two pointers
-c. Sliding window
+a. Arrays and Hashing <-- This is mostly done; I need to practice and do more questions
+b. Two pointers <-- Worked most on it. 
+c. Sliding window <-- 
 d. Binary Search <-- revisit
 e. Linked List 
 f. Trees 
