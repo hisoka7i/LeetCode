@@ -1,7 +1,7 @@
 public class lowerBound {
     public static void main(String[] args) {
-        int[] sample = {1,2,2,3,4};
-        System.out.println(findLower(sample, 2));
+        int[] sample = {1,2,2,3,4,6};
+        System.out.println(findLower(sample, 5));
     }
     public static int findLower(int[] arr, int target){
         int index = 0;
@@ -20,17 +20,17 @@ public class lowerBound {
     }
     //my logic, this is also working
     public static int binary(int[] arr, int left, int right, int target){
-        while(left<right){
-            int mid  = (left+right)/2;
-            if(arr[mid]>=target){return mid;
-            }
-            if(arr[mid]==target)return mid;
-            else if(arr[mid]>target){
-                right = mid - 1;
-            }else{
-                left = mid+1;
-            }
-        }
+        // while(left<right){
+        //     int mid  = (left+right)/2;
+        //     if(arr[mid]>=target){return mid;
+        //     }
+        //     if(arr[mid]==target)return mid;
+        //     else if(arr[mid]>target){
+        //         right = mid - 1;
+        //     }else{
+        //         left = mid+1;
+        //     }
+        // }
         // return -1;
 
 

@@ -70,4 +70,32 @@ class Solution {
         //suppose we need to search 6 in 5,6,1,2,3,4. In this case.
         return search1(nums,target,s,m-1);
     }
+
+    //my revision
+    public static int revision(int[] nums,int target){
+        int low = 0, high = nums.length - 1;
+        while(low<=high){
+            int mid = low + (high - low)/2;
+            if(nums[mid] == target)
+                return mid;
+            //searching for the sordted half 
+            if(nums[low]<=nums[mid]){
+                //this means that first half se sorted
+                if(target>= nums[low] && target<=nums[mid]){
+                    //means target high in this, less than mid part 
+                    high = mid - 1;
+                }else{
+                    low = mid + 1;
+                }
+            }else{
+                //this means that the second half is sorted
+                if(target>=nums[mid] && target <= nums[high]){
+                    low = mid + 1;
+                }else{
+                    high = mid  - 1;
+                }
+            }
+        }
+        return -1;
+    }
 }
