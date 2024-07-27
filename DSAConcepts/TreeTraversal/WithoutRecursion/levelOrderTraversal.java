@@ -1,6 +1,7 @@
 package TreeTraversal.WithoutRecursion;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -13,12 +14,14 @@ import TreeTraversal.BinaryTree;
  * 2. While traversal level l, keep all elements at the level l+1 in the queue
  * 3. Repeat this till all the levels
 */
-public class levelOrderTraversal {
-    public List<List<Integer>> levelOrderTraversal(BinaryTree root){
+public class LevelOrderTraversal {
+
+    //need to do dry run of this 
+    public List<List<Integer>> levelOrderTraversalTopDown(BinaryTree root){
         //this will contain all the list
         List<List<Integer>> result = new ArrayList<>();
 
-        Queue<BinaryTree> queue = new PriorityQueue<>();
+        Queue<BinaryTree> queue = new LinkedList<>();
         queue.offer(root);
         //the null represent, the level change
         queue.offer(null);
@@ -45,5 +48,6 @@ public class levelOrderTraversal {
                 }
             }
         }
+        return result;
     }
 }

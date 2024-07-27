@@ -9,4 +9,8 @@ public class BinaryTree {
         this.left = left;
         this.right = right;
     }
+    public BinaryTree(int data){
+        this.data = data;
+        this.left = this.right = null;
+    }
 }
