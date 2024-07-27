@@ -6,7 +6,7 @@ import java.util.Stack;
 
 import TreeTraversal.BinaryTree;
 
-public class Traveral {
+public class Traversal {
     public void PreOrder(BinaryTree root){
         //we are goinf to require a colleciton for this
         //handling the null
