@@ -66,4 +66,13 @@ public class TreeOperation {
         //now we will simply return the count of half node
         return count;
     }
+
+    public boolean ifPresent(BinaryTree root, int target){
+        if(root == null)
+            return false;
+        if(root.data == target)
+            return true;
+        return (ifPresent(root.left, target) || ifPresent(root.right, target));
+    }
 }
+

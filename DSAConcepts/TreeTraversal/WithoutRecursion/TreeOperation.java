@@ -57,7 +57,7 @@ public class TreeOperation {
         int max_value = Integer.MIN_VALUE;
         //we can not use priority queue, since will not let null value inside it
         Queue<BinaryTree> queue = new LinkedList<>();
-
+        queue.offer(root);
         //now we will iterate through the binary tree
         while(!queue.isEmpty()){
             BinaryTree current_node = queue.poll();
@@ -75,4 +75,26 @@ public class TreeOperation {
         }
         return max_value;
     }
+
+    //find element is present in binary tree
+    public boolean isPresent(BinaryTree root, int target){
+        if(root == null)
+            return false;
+        
+        Queue<BinaryTree> queue = new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            BinaryTree current_node = queue.poll();
+
+            if(current_node.data == target){
+                return true;
+            }
+            if(current_node.left != null)
+                queue.offer(current_node.left);
+            if(current_node.right != null)
+                queue.offer(current_node.right);
+        }
+        return false;
+    }
+    
 }
