@@ -15,6 +15,28 @@ public class TreeOperation {
         return (1 + left_count + right_count);
     }
 
+    //finding max in binary tree
+    public int maxElement(BinaryTree root){
+        int maxValue = Integer.MIN_VALUE;
+        if(root!=null){
+            int left_max = maxElement(root.left);
+            int right_max = maxElement(root.right);
+
+            //we are checking for left and right values
+            if(left_max > right_max){
+                maxValue = left_max;
+            }else{
+                maxValue = right_max;
+            }
+
+            //after checking for left and right, we will now look into the root value
+            if(root.data > maxValue){
+                maxValue = root.data;
+            }
+        }  
+        return maxValue;      
+    }
+
     public int numberOfHalfNodes(BinaryTree root){
         int count = 0;
         if(root == null)

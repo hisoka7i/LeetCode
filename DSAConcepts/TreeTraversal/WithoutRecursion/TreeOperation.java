@@ -47,4 +47,32 @@ public class TreeOperation {
         }
         return last_node;
     }
+
+
+    //finding max element in binary tree
+    public int maxElement(BinaryTree root){
+        if(root == null){
+            return -1;
+        }
+        int max_value = Integer.MIN_VALUE;
+        //we can not use priority queue, since will not let null value inside it
+        Queue<BinaryTree> queue = new LinkedList<>();
+
+        //now we will iterate through the binary tree
+        while(!queue.isEmpty()){
+            BinaryTree current_node = queue.poll();
+
+            if(current_node.data > max_value){
+                max_value = current_node.data;
+            }
+
+            if(current_node.left != null){
+                queue.offer(current_node.left);
+            }
+            if(current_node.right != null){
+                queue.offer(current_node.right);
+            }
+        }
+        return max_value;
+    }
 }
