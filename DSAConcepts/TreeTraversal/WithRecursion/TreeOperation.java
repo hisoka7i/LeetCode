@@ -74,5 +74,15 @@ public class TreeOperation {
             return true;
         return (ifPresent(root.left, target) || ifPresent(root.right, target));
     }
+
+    public int height(BinaryTree root){
+        if(root == null)
+            return 0;
+        int left_height = height(root.left);
+        int right_height = height(root.right);
+
+        //finding the max between the two side and adding it into the root
+        return Math.max(left_height, right_height)+1;
+    }
 }
 
