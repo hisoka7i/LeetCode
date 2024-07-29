@@ -84,5 +84,13 @@ public class TreeOperation {
         //finding the max between the two side and adding it into the root
         return Math.max(left_height, right_height)+1;
     }
+
+    //checking existance of a path, with given sum
+    public boolean isPathPresent(BinaryTree root, int sum){
+        if(root == null) return false;
+        if(root.left == null && root.right == null && root.data == sum)
+            return true;
+        return ((isPathPresent(root.left, sum-root.data)) || (isPathPresent(root.right, sum-root.data)))
+    }
 }
 

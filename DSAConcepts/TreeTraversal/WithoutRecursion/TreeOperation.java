@@ -96,5 +96,39 @@ public class TreeOperation {
         }
         return false;
     }
-    
+
+    //finding minimum dept of a binary tree
+    public int minimumDept(BinaryTree root){
+        //queue is required for level order tarversal
+        if(root == null)
+            return 0;
+        
+        Queue<BinaryTree> queue = new LinkedList<>();
+        queue.offer(root);
+        queue.offer(null); //to mark speration of levels
+
+        int minimum_count = 0;
+
+        while(!queue.isEmpty()){
+            BinaryTree current_node = queue.poll();
+
+            if(current_node != null){
+                if(current_node.left == null && current_node.right == null){
+                    return minimum_count;
+                }
+                if(current_node.left != null){
+                    queue.offer(current_node.left);
+                }
+                if(current_node.right != null){
+                    queue.offer(current_node.right);
+                }
+            }else{
+                minimum_count++;
+                if(!queue.isEmpty()){
+                    queue.offer(null);
+                }
+            }
+        }
+        return minimum_count;
+    }
 }

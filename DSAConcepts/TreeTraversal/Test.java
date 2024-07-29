@@ -19,9 +19,10 @@ public class Test {
         LevelOrderTraversal test = new LevelOrderTraversal();
         
         // Running the method and capturing the output
-        List<List<Integer>> result = test.levelOrderTraversalTopDown(root);
+        // List<List<Integer>> result = test.levelOrderTraversalTopDown(root);
 
+        test.fromDownTopLevelOrder(root);
         // Printing the result
-        System.out.println(result.toString());
+        // System.out.println(result.toString());
     }
 }

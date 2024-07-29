@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.Stack;
 
 import TreeTraversal.BinaryTree;
 
@@ -49,5 +50,41 @@ public class LevelOrderTraversal {
             }
         }
         return result;
+    }
+
+
+    //printing, level order data in reverse
+    public void fromDownTopLevelOrder(BinaryTree root){
+        if(root == null)
+            return;
+        //we will require stack for this
+        Stack<BinaryTree> stack = new Stack<>();
+        
+        //we will require a queue for level traversal
+        Queue<BinaryTree> queue = new LinkedList<>();
+        queue.offer(root);
+        queue.offer(null); //null to represent level division
+
+        while(!queue.isEmpty()){
+            BinaryTree current_node = queue.poll();
+            if(current_node != null){
+                if(current_node.left != null)
+                    queue.offer(current_node.left);
+                if(current_node.right != null)
+                    queue.offer(current_node.right);
+                
+                //adding current_node in stack, so that when we will retreat this
+                //we will get data in reverse 
+                stack.push(current_node);
+            }else{
+                if(!queue.isEmpty()){
+                    queue.offer(null);
+                }
+            }
+        }
+
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop().data + " ");
+        }
     }
 }
