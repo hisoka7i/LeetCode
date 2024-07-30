@@ -87,4 +87,37 @@ public class LevelOrderTraversal {
             System.out.println(stack.pop().data + " ");
         }
     }
+
+    //finding max sum at level
+    public int maxLevelSum(BinaryTree root){
+        int max_sum = 0;
+        int current_level_sum = 0;
+
+        Queue<BinaryTree> queue = new LinkedList<>(); //This is required for BFS
+        queue.offer(root);
+        queue.offer(null); //this will be used for sepration of levels
+
+        while(!queue.isEmpty()){
+            BinaryTree current_node = queue.poll();
+            if(current_node != null){
+                //we are incrementing current level sum here
+                current_level_sum += current_node.data;
+                if(current_node.left != null){
+                    queue.offer(current_node.left);
+                }
+                if(current_node.right != null){
+                    queue.offer(current_node.right);
+                }
+            }else{
+                if(current_level_sum > max_sum){
+                    max_sum = current_level_sum;
+                }
+                current_level_sum = 0;
+                if(queue.isEmpty() == false ){
+                    queue.offer(null);
+                }
+            }
+        }
+        return max_sum; 
+    }
 }
