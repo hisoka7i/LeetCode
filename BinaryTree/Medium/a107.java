@@ -25,9 +25,10 @@ public class a107 {
                 if(current_node.right != null)queue.offer(current_node.right);
                 list.add(current_node.val);
             }else{
+                result.add(list);
                 if(!queue.isEmpty()){
                     queue.add(null);
-                    result.add(list);
+                    
                     list = new ArrayList<>();
                 }else{
                     break;
@@ -38,3 +39,4 @@ public class a107 {
         return result;
     }
 }
+
