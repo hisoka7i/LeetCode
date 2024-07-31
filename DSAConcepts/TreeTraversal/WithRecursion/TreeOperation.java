@@ -92,5 +92,35 @@ public class TreeOperation {
             return true;
         return ((isPathPresent(root.left, sum-root.data)) || (isPathPresent(root.right, sum-root.data)))
     }
+
+    //making mirror of a binary tree
+    public BinaryTree makeMirror(BinaryTree root){
+        BinaryTree temp; 
+        if(root != null){
+            makeMirror(root.left);
+            makeMirror(root.right);
+
+            temp = root.left;
+            root.left = root.right;
+            root.right = temp;
+        }
+        return root;
+    }
+
+    //finding diameter of a tree
+    //diameter of binary tree is equal to height of binary tree.
+    //for diameter we will find the right deepest and left deepest and hence we will, have the final value
+    int diameter_value = 0;
+    public int diameter(BinaryTree root){
+        if(root == null)return 0;
+        int left = diameter(root.left);
+        int right = diameter(root.right);
+
+        if(left + right > diameter_value){
+            diameter_value = left + right;
+        }
+
+        return Math.max(left, right)+1;
+    }
 }
 
