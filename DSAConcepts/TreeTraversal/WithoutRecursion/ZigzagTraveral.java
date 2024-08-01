@@ -37,22 +37,18 @@ public class ZigzagTraveral {
             }else{
                 if(left_to_right){
                     final_result.add(new ArrayList<>(current_level_values));
-                    current_level_values.clear();
                 }else{
                     Stack<Integer> stack = new Stack<>();
                     stack.addAll(current_level_values);
-                    current_level_values = new ArrayList<>();
+                    current_level_values.clear();
                     while (!stack.isEmpty()) {
                         current_level_values.add(stack.pop());
                     }
 
                     final_result.add(new ArrayList<>(current_level_values));
-                    current_level_values.clear();
                 }
-
-                if(queue.isEmpty()){
-                    break;
-                }else{
+                current_level_values.clear();
+                if(!queue.isEmpty()){
                     queue.add(null);
                     left_to_right = !left_to_right;
                 }
