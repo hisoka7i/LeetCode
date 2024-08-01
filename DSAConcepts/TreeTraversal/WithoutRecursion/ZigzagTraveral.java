@@ -40,10 +40,7 @@ public class ZigzagTraveral {
                     current_level_values.clear();
                 }else{
                     Stack<Integer> stack = new Stack<>();
-                    while(!current_level_values.isEmpty()){
-                        stack.push(current_level_values.get(0));
-                        current_level_values.remove(0);
-                    }
+                    stack.addAll(current_level_values);
                     current_level_values = new ArrayList<>();
                     while (!stack.isEmpty()) {
                         current_level_values.add(stack.pop());

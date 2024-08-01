@@ -122,5 +122,26 @@ public class TreeOperation {
 
         return Math.max(left, right)+1;
     }
+
+    /*
+     * Three pointer binary tree, left, right and sibling
+    */
+    public void insertSibling(BinaryTree root){
+        if(root == null)return;
+
+        //setting sibling for, left child
+        if(root.left != null){
+            root.left.sibling = root.right;
+        }
+        //setting sibling for, right child
+        if(root.right != null){
+            //we need it check,if parent has right sibling or not
+            if(root.sibling != null){
+                root.right.sibling = root.sibling.left;
+            }else{
+                root.right = null;
+            }
+        }
+    }
 }
 

@@ -4,6 +4,7 @@ public class BinaryTree {
     public int data;
     public BinaryTree left;
     public BinaryTree right;
+    public BinaryTree sibling;
     public BinaryTree(int data, BinaryTree left, BinaryTree right){
         this.data = data;
         this.left = left;
