@@ -107,9 +107,10 @@ public class TreeOperation {
         return root;
     }
 
-    //finding diameter of a tree
-    //diameter of binary tree is equal to height of binary tree.
-    //for diameter we will find the right deepest and left deepest and hence we will, have the final value
+    /* finding diameter of a tree
+    * diameter of binary tree is equal to height of binary tree.
+    * for diameter we will find the right deepest and left deepest and hence we will, have the final value
+    */
     int diameter_value = 0;
     public int diameter(BinaryTree root){
         if(root == null)return 0;
@@ -142,6 +143,23 @@ public class TreeOperation {
                 root.right = null;
             }
         }
+    }
+
+    /*
+     * Finding all ancestors of a node
+    */
+    public boolean findAncestors(BinaryTree root, BinaryTree node){
+        if(root == null)return false;
+        /*
+         * look it left, is equal to node or right is equal to node
+         * if not found then keep on look, first left and then right
+        */
+        if(root.left == node || root.right == node || findAncestors(root.left, node)
+        || findAncestors(root.right, node)){
+            System.out.println(root.data);
+            return true;
+        }
+        return false;
     }
 }
 
