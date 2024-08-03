@@ -161,5 +161,21 @@ public class TreeOperation {
         }
         return false;
     }
+
+    /*
+     * Finding minimum dept of a tree
+    */
+    public int findMinDept(BinaryTree root){
+        if(root == null)return 0;
+        
+        //if left-sub tree is null, then we will look in the right side
+        if(root.left == null) return findMinDept(root.right)+1;
+
+        //if right-sub tree is null, then we will look in the left side
+        if(root.right == null) return findMinDept(root.left)+1;
+
+        //in case of both the child trees are present
+        return Math.min(findMinDept(root.left), findMinDept(root.right))+1;
+    }
 }
 
