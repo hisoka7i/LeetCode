@@ -25,7 +25,7 @@ public class LevelOrderTraversal {
         Queue<BinaryTree> queue = new LinkedList<>();
         queue.offer(root);
         //the null represent, the level change
-        queue.offer(null);
+        queue.offer(null); 
 
         List<Integer> current = new ArrayList<>();
         while(!queue.isEmpty()){
