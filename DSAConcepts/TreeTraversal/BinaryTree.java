@@ -14,4 +14,8 @@ public class BinaryTree {
         this.data = data;
         this.left = this.right = null;
     }
+    public BinaryTree(){
+        this.left = null;
+        this.right = null;
+    }
 }
