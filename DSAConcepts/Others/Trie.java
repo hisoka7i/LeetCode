@@ -1,3 +1,4 @@
+package Others;
 
 public class Trie {
     static final int ALPHABET_SIZE  = 26;
