@@ -3,6 +3,7 @@ package BinaryHeap;
 public class HeapOperations {
     private int count;
     private int[] array;
+    private int capacity;
 
     /*
      * for index i, parent is (i-1)/2
@@ -70,5 +71,41 @@ public class HeapOperations {
         }
     }
 
-    /**/
+    /*
+     * Deleting an element from a heap
+     * You swap the top element with the last element
+    */
+    public int deleteMax(){
+        if(this.count == 0)return -1;
+        int data = this.array[0];
+        this.array[0] = this.array[this.count-1];
+        //here we are decreasing the size of heap
+        this.count--;
+        //we need to heapify, from the top
+        percolateDown(0);
+        return data;
+    }
+
+    /*
+     * Insert an element.
+     * Add the element in last place, then heapify from the bottom to top
+    */
+    public void insertData(int data){
+        if(this.count == this.capacity){
+            //if heap size is already filled then we need to increase the size of heap
+            resizeHeap();
+        }
+        int i = this.count - 1;
+        //this will do heapifying process
+        while(i >= 0 && data >= this.array[(i-1)/2]){
+            this.array[i] = this.array[(i-1)/2];
+            i = (i-1)/2;
+        }
+        this.array[i] = data;
+    }
+
+    private void resizeHeap() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'resizeHeap'");
+    }
 }
