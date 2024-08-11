@@ -1,3 +1,4 @@
+package Others;
 
 public class KMPAlgo<F> {
    int F[];

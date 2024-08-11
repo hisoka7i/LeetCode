@@ -1,3 +1,4 @@
+package Others;
 import java.util.Scanner;
 //import java.util.*;
 import java.util.Arrays;

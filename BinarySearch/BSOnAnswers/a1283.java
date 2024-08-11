@@ -2,7 +2,7 @@ public class a1283 {
     public static void main(String[] args) {
         int[] sample = {44,22,33,11,1};
         System.out.println(binarySearch(sample, 5));
-    }
+    } 
     //It's a good thing that now I am able to get some pattern dediction, in binary search
     public static int binarySearch(int[] sample,int k){
         int low = 1;

@@ -1,3 +1,4 @@
+package Others;
 public class EuclidsAlgoGCD {
     public static void main(String[] args){
         int value = gcd(3,12);
