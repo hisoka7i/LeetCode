@@ -10,7 +10,7 @@ public class a1283 {
         for(int i:sample){
             high = Math.max(i, high);
         }
-        while (low<=high) {
+        while (low<=high) { 
             int mid = low + (high-low)/2;
             if(thresholdCheck(sample, mid, k)){
                 high = mid - 1;
