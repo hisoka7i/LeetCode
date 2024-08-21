@@ -108,4 +108,62 @@ public class HeapOperations {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'resizeHeap'");
     }
+
+    /*
+     * A function to check if an array is min/max heap or not
+    */
+    public static boolean isMinMaxHeap(int[] sample){
+        boolean is_max = true;
+        if(sample[0] < sample[1]){
+            is_max = false;
+            //means max heap
+        }
+        //for every index we will check if statisfy the equation or not
+        for(int i=0;i<sample.length;i++){
+            if(!checkForCondition(sample, i, is_max)){
+                return false;
+            } 
+        }
+        return true;
+    }
+
+    private static boolean checkForCondition(int[] sample, int i, boolean is_max) {
+        // TODO Auto-generated method stub
+        if((2*i + 1) >= sample.length){
+            return true;
+        }
+        
+        if(is_max){
+            if(sample[i] < sample[2*i + 1]){
+                return false;
+            }
+            if((2*i + 2) >= sample.length){
+                return true;
+            }
+            if(sample[i] < sample[2*i + 2]){
+                return false;
+            }
+        }else{
+            if(sample[i] > sample[2*i + 1]){
+                return false;
+            }
+            if((2*i + 2) >= sample.length){
+                return true;
+            }
+            if(sample[i] > sample[2*i + 2]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /*
+     * Converting min heap to max heap, 
+    */
+    public void convertMinHeapToMaxHeap() {
+        // Start from the last non-leaf node and heapify each node.
+        for (int i = (array.length / 2) - 1; i >= 0; i--) {
+            percolateDown(i);
+        }
+    }
 }
