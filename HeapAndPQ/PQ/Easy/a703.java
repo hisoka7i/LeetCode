@@ -24,7 +24,7 @@ class KthLargest {
     //My solution, but this is showing out of memory issue. 
     // I should have start from the very beginning.
     /*
-     * public KthLargest(int k, int[] nums) {
+     * public KthLargest(int k, int[] nums) { 
         size = k;
         for(int current: nums){
             max_heap.offer(current);
