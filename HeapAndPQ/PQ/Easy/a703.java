@@ -19,7 +19,7 @@ class KthLargest {
             min_heap.poll();
             min_heap.offer(val);
         }
-        return min_heap.peek();
+        return min_heap.peek(); 
     }
     //My solution, but this is showing out of memory issue. 
     // I should have start from the very beginning.
