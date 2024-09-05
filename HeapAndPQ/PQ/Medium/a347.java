@@ -1,35 +1,39 @@
 package HeapAndPQ.PQ.Medium;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.PriorityQueue;
+import java.util.Set;
+import java.util.Map.Entry;
 
 public class a347 {
+    //here we need to find k most frequent integers
     public int[] topKFrequent(int[] nums, int k) {
-        PriorityQueue<Integer> min_heap = new PriorityQueue<>();
-
-        //so my is to put all the elements into the heap and use 2 pointer after that to
-        //calculate the result.
-        List<Integer> output = new ArrayList<>();
-
+        Map<Integer,Integer> integer_mapping = new HashMap<>();
         for(int current_number: nums){
-            min_heap.offer(current_number);
-        }
-        int counter = 0;
-        int pointer1 = min_heap.poll();
-        while(!min_heap.isEmpty()){
-            int pointer2 = min_heap.poll();
-            if(pointer1 == pointer2){
-                if(++counter == k){
-                    output.add(pointer1);
-                }
-            }else{
-                counter = 0;
-                pointer1 = pointer2;
-                pointer2 = min_heap.poll();
-            }
+            integer_mapping.put(current_number, integer_mapping.getOrDefault(current_number, 0)+1);
         }
 
-        return output.stream().mapToInt(i->i).toArray();
+        //on the basis of frequency we are creating a max heap
+        PriorityQueue<Map.Entry<Integer,Integer>> maxHeap = new PriorityQueue<>((a,b)->(
+            b.getValue() - a.getValue()
+        ));
+
+        //need to insert data into max heap
+        for(Entry<Integer,Integer> current: integer_mapping.entrySet()){
+            maxHeap.offer(current);
+        }
+
+        int[] output = new int[k];
+
+        for(int i=0;i<k;i++){
+            output[i] = Objects.requireNonNull(maxHeap.poll().getKey());
+        }
+
+        return output;
     }
 }
