@@ -13,14 +13,14 @@ public class a78 {
 
     public void helperFunction(List<List<Integer>> result, List<Integer> subset, int index,int[] nums){
         if(index == nums.length){
-            result.add(subset);
+            result.add(new ArrayList<>(subset));
             return;
         }
 
         subset.add(nums[index]);
         helperFunction(result, subset, index+1, nums);
 
-        subset.remove(nums[index-1]);
+        subset.remove(subset.size() - 1);
         helperFunction(result, subset, index+1, nums);
     }
 }
