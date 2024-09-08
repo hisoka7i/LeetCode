@@ -4,23 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class a78 {
+    //we are going to use striever picking and not picking pattern
     public List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        List<Integer> subset = new ArrayList<>();
-        helperFunction(result, subset, 0, nums);
-        return result;
+        List<List<Integer>> output = new ArrayList<>();
+        List<Integer> bucket = new ArrayList<>();
+        pickingNotPicking(nums, 0, output, bucket);
+        return output;
     }
-
-    public void helperFunction(List<List<Integer>> result, List<Integer> subset, int index,int[] nums){
+    public void pickingNotPicking(int nums[],int index, List<List<Integer>> output, List<Integer> bucket){
         if(index == nums.length){
-            result.add(new ArrayList<>(subset));
-            return;
+            //base condition
+            output.add(new ArrayList<Integer>(bucket));
         }
 
-        subset.add(nums[index]);
-        helperFunction(result, subset, index+1, nums);
+        //here we are writing the picking part
+        bucket.add(nums[index]);
+        pickingNotPicking(nums, index+1, output, bucket);
 
-        subset.remove(subset.size() - 1);
-        helperFunction(result, subset, index+1, nums);
+        bucket.remove(bucket.size()-1);
+        pickingNotPicking(nums, index+1, output, bucket);
     }
 }
