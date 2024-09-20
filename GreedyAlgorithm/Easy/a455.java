@@ -11,7 +11,7 @@ public class a455 {
         Arrays.sort(num1);
         Arrays.sort(num2);
         
-        //we will make 2 indexes
+        //we will make 2 indexes 
         int left = 0, right = 0;
         int count = 0;
         while(left<num1.length && right<num2.length){
