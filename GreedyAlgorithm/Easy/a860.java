@@ -1,7 +1,7 @@
 package GreedyAlgorithm.Easy;
 
 import java.util.Arrays;
-
+ 
 public class a860 {
     public boolean lemonadeChange(int[] bills) {
         int number_of_five = 0;
