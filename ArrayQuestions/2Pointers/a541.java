@@ -18,6 +18,7 @@ public class a541 {
         }
         return String.valueOf(characterArray);
     }
+    //wrong solution
     public static String reverseStr2(String s, int k) {
         char[] characterArray = s.toCharArray();
         int ptr1 = 0;
