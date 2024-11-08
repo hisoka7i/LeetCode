@@ -5,7 +5,7 @@ public class EvenOdd {
 
         System.out.println("Enter your number here: ");
 
-        try{
+        try{ 
             int number = scan.nextInt();
             if((number&1)==0){
                 System.out.println("Number is even");
