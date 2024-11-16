@@ -1,18 +1,17 @@
 package BinaryTree.Medium;
 
+import BinaryTree.TreeNode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-import BinaryTree.TreeNode;
-
 public class a103 {
     //in this we will use, lvl order traversal, and when travel even level we will use a stack to reverse the values
     //or we can also do collection.reverse
     
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) { 
         //a queue is required to save the values
         List<List<Integer>> output = new ArrayList<>();
         if(root == null)
