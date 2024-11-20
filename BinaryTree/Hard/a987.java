@@ -17,7 +17,7 @@ class Node {
     }
 }
 
-public class a987 {
+public class a987 { 
     //This data structure we contain <row, map<column, sortedNodes_values>>> 
     TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> hashmap;
 
