@@ -35,6 +35,7 @@ public class RootToLeaf {
             allThePaths(path, root.right);
         }
         //do the backtracking 
+        //My assumption was wrong in think, that arraylist will automatically shrink
         path.remove(path.size() - 1);
     }
 }
