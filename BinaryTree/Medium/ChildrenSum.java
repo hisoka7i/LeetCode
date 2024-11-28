@@ -12,7 +12,9 @@ public class ChildrenSum {
     {
         // add your code here
         if(root == null)return 0;
-
+        if(levelOrder(root))
+            return 1;
+        return 0;
     }
 
     public static boolean levelOrder(TreeNode root){
@@ -47,5 +49,6 @@ public class ChildrenSum {
                 }
             }
         }
+        return true;
     }
 }
