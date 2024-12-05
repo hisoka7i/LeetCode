@@ -2,23 +2,19 @@ package BinarySearchTree.Easy;
 
 import BinaryTree.TreeNode;
 
-public class Ceil {
-    public int findCeil(TreeNode root){
-        int ceil = -1;
-        if(root == null)return ceil;
-
+public class Floor {
+    public int findFloor(TreeNode root){
+        int floor = -1;
+        if(root == null)return -1;
         while(root != null){
-            if(root.val == ceil){
-                return ceil;
-            }
             if(key > root.val){
                 //means move right
+                floor = root.val;
                 root = root.right;
             }else{
-                ceil = root.val;
                 root = root.left;
             }
         }
-        return ceil;
+        return floor;
     }
 }
