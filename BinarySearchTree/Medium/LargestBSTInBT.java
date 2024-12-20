@@ -45,4 +45,24 @@ public class LargestBSTInBT {
             return new TreeNodeInfo(false, 0, 0, 0);
         }
     }
+
+    // Main function to test the functionality
+    public static void main(String[] args) {
+        LargestBSTInBT solution = new LargestBSTInBT();
+
+        // Creating a sample binary tree
+        TreeNode root = new TreeNode(10);
+        root.left = new TreeNode(5);
+        root.right = new TreeNode(15);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(8);
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(7);
+        
+        // Calling the function to find the largest BST subtree
+        int largestBSTSize = solution.largestBSTSubtree(root);
+        
+        // Printing the result
+        System.out.println("Largest BST Subtree Size: " + largestBSTSize);
+    }
 }
