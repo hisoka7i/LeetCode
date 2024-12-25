@@ -17,7 +17,7 @@ public class a885 {
         int index = 0; //to track the number of cells visited
 
         int r = rStart, c = cStart;
-        result[index++] = new int[]{r, c};
+        result[index++] = new int[]{r, c}; 
 
         while (index < totalCells) {
             for (int i = 0; i < 2; i++) {  // each direction pair (right & down or left & up)
