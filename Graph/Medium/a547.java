@@ -42,7 +42,7 @@ public class a547 {
 
         for(Integer current: adjancency.get(i)){
             if(visited[current] == false)
-            visited[current] = true;
+            dfs(current, adjancency, visited);
         }
     }
 }
