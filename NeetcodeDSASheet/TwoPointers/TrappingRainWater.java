@@ -1,6 +1,7 @@
 package NeetcodeDSASheet.TwoPointers;
 
 public class TrappingRainWater {
+    //neetcode solutions
     public int trap(int[] height) {
         int left = 0;
         int leftMax = 0;
