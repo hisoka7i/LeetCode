@@ -17,6 +17,7 @@ public class a2658 {
                 maxfishCount = Math.max(maxfishCount, calculate(i, j, visited, grid));
             }
         }
+        return maxfishCount;
     }
 
     private int calculate(int i, int j, boolean[][] visited, int[][] grid) {
