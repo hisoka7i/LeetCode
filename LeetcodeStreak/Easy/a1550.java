@@ -1,3 +1,4 @@
+package LeetcodeStreak.Easy;
 
 public class a1550 {
     //Given an integer array arr, return true if there 
