@@ -6,13 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 public class a1790 {
-    public boolean areAlmostEqual(String s1, String s2){
-        if(s1.length() != s2.length())return false;
-
-        int count = 0;
-        int firstIndex 
-    }
-
     // This is only failing 2/138 test cases
     public boolean areAlmostEqual2(String s1, String s2) {
         if (s1.length() != s2.length())
