@@ -3,6 +3,7 @@ package LeetcodeStreak.Medium;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.TreeSet;
 
 class NumberContainers {
     public static void main(String[] args) {
@@ -37,15 +38,34 @@ class NumberContainers {
         System.out.println("All test cases executed.");
     }
 
-    Map<Integer, PriorityQueue<Integer>> numberMapping; // this will contain index and number
-    Map<Integer, Integer> indexMapping;
 
+    /// 
+    Map<Integer, PriorityQueue<Integer>> numberMapping; // this will contain index and number
+
+
+
+    Map<Integer, Integer> indexMapping;
+    Map<Integer, TreeSet<Integer>> numberMap;
     public NumberContainers() {
-        numberMapping = new HashMap<>();
+        numberMap = new HashMap<>();
         indexMapping = new HashMap<>();
     }
 
     public void change(int index, int number) {
+
+        if(indexMapping.containsKey(index)){
+            int prevNumber = indexMapping.get(index);
+            numberMap.get(prevNumber).remove(index);
+            if(numberMap.get(prevNumber).isEmpty()){
+                numberMap.remove(prevNumber);
+            }
+        }
+
+        indexMapping.put(index, number);
+        numberMap.putIfAbsent(number, new TreeSet<>());
+        numberMap.get(number).add(index);
+
+        //My method is also the same
         if (numberMapping.containsKey(number) && !indexMapping.containsKey(index)) {
             indexMapping.put(index, number);
             numberMapping.get(number).offer(index);
