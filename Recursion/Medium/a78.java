@@ -7,8 +7,25 @@ public class a78 {
     //we are going to use striever picking and not picking pattern
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> output = new ArrayList<>();
-        List<Integer> bucket = new ArrayList<>();
-        pickingNotPicking(nums, 0, output, bucket);
+        pickingNotPickingUsingBit(nums, 0, output);
+        return output;
+    }
+    //using bit manipulation
+    public List<List<Integer>>  pickingNotPickingUsingBit(int nums[],int index, List<List<Integer>> output){
+        int n = nums.length;
+        for(int num =0;num<(1<<n);num++){
+            List<Integer> bucket = new ArrayList<>();
+            for(int i=0;i<n;i++){
+                //we need to find, if ith bit is set or not
+                //if set then add the answer
+                if((num & (1<<i)) != 0){
+                    bucket.add(nums[i]);
+                }
+            }
+            // if(bucket.size() > 0){
+                output.add(bucket);
+            // }go
+        }
         return output;
     }
     public void pickingNotPicking(int nums[],int index, List<List<Integer>> output, List<Integer> bucket){
