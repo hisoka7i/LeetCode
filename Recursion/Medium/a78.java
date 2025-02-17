@@ -4,14 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class a78 {
+    public static void main(String[] args) {
+        int[] sample = {1,2,3};
+        subsets(sample);
+    }
     //we are going to use striever picking and not picking pattern
-    public List<List<Integer>> subsets(int[] nums) {
+    public static List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> output = new ArrayList<>();
-        pickingNotPickingUsingBit(nums, 0, output);
+        List<Integer> bucket = new ArrayList<>();
+        pickingNotPicking(nums, 0, output,bucket);
         return output;
     }
     //using bit manipulation
-    public List<List<Integer>>  pickingNotPickingUsingBit(int nums[],int index, List<List<Integer>> output){
+    public static List<List<Integer>>  pickingNotPickingUsingBit(int nums[],int index, List<List<Integer>> output){
         int n = nums.length;
         for(int num =0;num<(1<<n);num++){
             List<Integer> bucket = new ArrayList<>();
@@ -28,10 +33,11 @@ public class a78 {
         }
         return output;
     }
-    public void pickingNotPicking(int nums[],int index, List<List<Integer>> output, List<Integer> bucket){
+    public static void pickingNotPicking(int nums[],int index, List<List<Integer>> output, List<Integer> bucket){
         if(index == nums.length){
             //base condition
             output.add(new ArrayList<Integer>(bucket));
+            return;
         }
 
         //here we are writing the picking part
