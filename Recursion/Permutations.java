@@ -1,6 +1,6 @@
 public class Permutations {
     public static void main(String[] args) {
-        inOrderPermutation("", "null");
+        inOrderPermutation("", "1296");
     }
     public static void inOrderPermutation
     (String prefix, String sample){
