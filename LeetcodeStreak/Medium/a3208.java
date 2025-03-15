@@ -5,7 +5,10 @@ public class a3208 {
         a3208 a3208 = new a3208();
         a3208.numberOfAlternatingGroups(new int[]{0,1,0,1,0}, 3);
     }
-    public int numberOfAlternatingGroups(int[] colors, int k) {
+
+
+    
+    public int numberOfAlternatingGroups2(int[] colors, int k) {
         int n = colors.length;
         int count = 0;
         for(int i=0;i<n;i++){
@@ -26,5 +29,32 @@ public class a3208 {
             k--;
         }
         return true;
+    }
+
+    private int numberOfAlternatingGroups(int[] i, int k) {
+        int[] extendedAray = new int[i.length + k -1];
+        for(int j=0;j<i.length;j++){
+            extendedAray[j] = i[j];
+        }
+        for(int j=0;j<k-1;j++){
+            extendedAray[i.length+j] = i[j];
+        }
+        int length = extendedAray.length;
+        int result = 0;
+        int left = 0;
+        int right = 1;
+        while(right < length){
+            if(extendedAray[right] == extendedAray[right-1]){
+                left = right;
+                right++;
+                continue;
+            }
+            right++;
+            if(right - left < k)continue;
+
+            result++;
+            left++;
+        }
+        return result;
     }
 }
