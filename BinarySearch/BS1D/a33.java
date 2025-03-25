@@ -1,6 +1,6 @@
-class Solution {
+class a33 {
     public static void main(String[] args) {
-        int[] nums = {4,5,6,7,0,1,2};
+        int[] nums = {5,1,3};
         System.out.println(search(nums, 0));
     }
     //Steps to solve the problem
