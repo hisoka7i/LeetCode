@@ -14,9 +14,28 @@ public class a2145 {
         //we need to find all the pairs who satisfies the first condition and then we simply need to add the values of difference array
     }
 
+
+    public int realSolution(int[] differences, int lower, int upper){
+        int x = 0, y = 0, current = 0;
+        for(int d: differences){
+            current += d;
+            int min = Math.min(current, x);
+            int max = Math.max( current, y);
+
+            if(y - x > upper - lower){
+                return  0;
+            }
+        }
+        return (upper-lower)-(y-x) + 1;
+    }
+
+
+
+    //this logic is correct but it is giving time limit exceeded
+
     public void findArray(int[] differences, int lower, int upper, int index){
         int n = differences.length;
-        if(lower+index == upper){
+        if(lower+index > upper){
             return;
         }
 
