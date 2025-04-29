@@ -1,8 +1,43 @@
 package LeetcodeStreak.Medium;
 
+import java.util.Map;
 import java.util.Set;
 
 public class a2799 {
+
+    //now we going to solve this question using sliding window technique and hash table
+    public int countCompleteSubarrays(int[] nums){
+        Set<Integer> set = new java.util.HashSet<>();
+        int count = 0;
+        int left = 0;
+        int right = 0;
+        for(int num: nums){
+            set.add(num);
+        }
+        int distinctCount = set.size();
+
+        Map<Integer, Integer> map = new java.util.HashMap<>();
+        map.put(nums[left], 1);
+
+        while(left < nums.length){
+            
+            if(map.size() == distinctCount){
+                count += (nums.length - right);
+                map.put(nums[left], map.get(nums[left]) - 1); //now we are removing the left element from the map
+                if(map.get(nums[left]) == 0){
+                    map.remove(nums[left]);
+                }
+                left++;
+            }else{
+                if (right == nums.length){
+                    break;
+                }
+                right++;
+                map.put(nums[right], map.getOrDefault(nums[right], 0) + 1);
+            }
+        }
+        return count;
+    }
 
 
     //bruter  force solution for this question
