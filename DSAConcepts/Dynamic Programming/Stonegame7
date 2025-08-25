@@ -1,0 +1,20 @@
+class Solution {
+    public int stoneGameVII(int[] stones) {
+        int[][] memo = new int[stones.length+1][stones.length+1];
+        for(int[] row: memo)Arrays.fill(row , -1);
+        int value = helper_function(stones, 0, stones.length-1, Arrays.stream(stones).sum(), memo);
+        return value;
+    }
+    public int helper_function(int[] stones, int i, int j, int sum, int[][] memo){
+        if(i >= j || sum <= 0)return 0;
+
+        if(memo[i][j] != -1)return memo[i][j];
+
+        int a = (sum - stones[i]) - helper_function(stones, i+1, j, sum - stones[i], memo);
+        int b = (sum - stones[j]) - helper_function(stones, i, j - 1, sum - stones[j], memo);
+
+        memo[i][j] = Math.max(a,b);
+        return Math.max(a,b);
+        
+    } 
+}
